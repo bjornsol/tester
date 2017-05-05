@@ -1,0 +1,64 @@
+*** Targets ***
+
+probe = FPing
+
+menu = Top
+title = Raspberry Pi Internet Access Monitor
+remark = Latency to a few select sites and services in the Internet.
+
++ Internet
+menu = Internet
+title = Internet Access (Ping)
+
+++ Google
+title = Google
+menu = Google
+host = www.google.com
+
+++ FB
+title = Facebook
+menu = Facebook
+host = www.facebook.com
+
+++ Yahoo
+title = Yahoo
+menu = Yahoo
+host = www.yahoo.com
+
++ DNS
+menu = DNS
+title = Name Servers
+
+++ gdns
+title = Google public DNS
+menu = Google public DNS
+probe = EchoPingDNS
+dns_request = www.google.com
+host = 8.8.8.8
+
+++ cablecom
+title = Cablecom DNS
+menu = Cablecom
+probe = EchoPingDNS
+dns_request = www.google.com
+host = <Your ISPs primary NS IP address>
+
++ Cloud
+menu = Cloud
+title = Cloud Services
+
+++ dropbox
+title = Dropbox
+menu = Dropbox
+probe = EchoPingHttp
+host = dl.dropboxusercontent.com
+port = 80 
+url = /u/12770892/benchmark/raspberrypi.jpg
+
+++ gusercontent
+title = Google+ Photo
+menu = Google 
+probe = EchoPingHttp
+host = lh4.googleusercontent.com
+port = 80
+url = /UB5Y5yJKtj51bs2asd8kJGjOxwigev7JPQz3g9tw1C0=w614-h801-no
